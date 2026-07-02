@@ -18,13 +18,27 @@ import {
   pipeline,
 } from "@/content/architecture";
 import { codeSamples } from "@/content/code-samples";
+import { ReadingProgress } from "@/components/reading-progress";
+import { CaseStudyNav } from "@/components/case-study-nav";
+
+const sections = [
+  { id: "overview", label: "Overview" },
+  { id: "problem", label: "Problem" },
+  { id: "architecture", label: "Architecture" },
+  { id: "decisions", label: "Decisions" },
+  { id: "code", label: "Code" },
+  { id: "impact", label: "Impact" },
+];
 
 /** The full AVA ONE engineering case study. */
 export function AvaOneCaseStudy({ project }: { project: Project }) {
   return (
     <>
+      <ReadingProgress />
+      <CaseStudyNav sections={sections} />
+
       {/* HEADER */}
-      <section className="mx-auto max-w-[1100px] px-8 pb-10 pt-14">
+      <section id="overview" className="mx-auto max-w-[1100px] px-8 pb-10 pt-14">
         <Link
           href="/projects"
           className="mb-[34px] inline-flex items-center gap-1.5 font-body text-[13px] text-ink-6 transition-colors hover:text-ink-8"
@@ -66,7 +80,7 @@ export function AvaOneCaseStudy({ project }: { project: Project }) {
       </section>
 
       {/* PROBLEM */}
-      <Reveal as="section" className="mx-auto max-w-[1100px] px-8 py-11">
+      <Reveal as="section" id="problem" className="mx-auto max-w-[1100px] scroll-mt-24 px-8 py-11">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-5">
           01 · The problem
         </p>
@@ -95,7 +109,7 @@ export function AvaOneCaseStudy({ project }: { project: Project }) {
       </Reveal>
 
       {/* ARCHITECTURE */}
-      <Reveal as="section" className="mx-auto max-w-[1100px] px-8 py-11">
+      <Reveal as="section" id="architecture" className="mx-auto max-w-[1100px] scroll-mt-24 px-8 py-11">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-5">
           02 · The architecture
         </p>
@@ -109,7 +123,7 @@ export function AvaOneCaseStudy({ project }: { project: Project }) {
       </Reveal>
 
       {/* DECISIONS */}
-      <Reveal as="section" className="mx-auto max-w-[1100px] px-8 py-11">
+      <Reveal as="section" id="decisions" className="mx-auto max-w-[1100px] scroll-mt-24 px-8 py-11">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-5">
           03 · Engineering decisions
         </p>
@@ -124,7 +138,7 @@ export function AvaOneCaseStudy({ project }: { project: Project }) {
       </Reveal>
 
       {/* CODE */}
-      <Reveal as="section" className="mx-auto max-w-[1100px] px-8 py-11">
+      <Reveal as="section" id="code" className="mx-auto max-w-[1100px] scroll-mt-24 px-8 py-11">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-5">
           04 · The code behind it
         </p>
@@ -135,7 +149,7 @@ export function AvaOneCaseStudy({ project }: { project: Project }) {
       </Reveal>
 
       {/* IMPACT + LESSONS */}
-      <Reveal as="section" className="mx-auto max-w-[1100px] px-8 pb-10 pt-11">
+      <Reveal as="section" id="impact" className="mx-auto max-w-[1100px] scroll-mt-24 px-8 pb-10 pt-11">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <div className="rounded-[18px] border border-violet/20 bg-gradient-to-br from-violet-tint to-[#0c0c10] p-7">
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-violet">

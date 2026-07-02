@@ -24,6 +24,8 @@ interface RevealProps {
   /** Delay in seconds, for hand-tuned sequences. */
   delay?: number;
   as?: "div" | "section" | "li" | "article";
+  /** Optional id, e.g. for scroll-spy anchors. */
+  id?: string;
 }
 
 /**
@@ -31,10 +33,11 @@ interface RevealProps {
  * Reduced-motion users get the content immediately (framer handles this
  * globally via MotionConfig in the providers).
  */
-export function Reveal({ children, className, delay = 0, as = "div" }: RevealProps) {
+export function Reveal({ children, className, delay = 0, as = "div", id }: RevealProps) {
   const MotionTag = motion[as] as typeof motion.div;
   return (
     <MotionTag
+      id={id}
       className={className}
       variants={revealVariants}
       initial="hidden"
