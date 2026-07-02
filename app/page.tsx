@@ -13,6 +13,8 @@ import { heroStats, principles, stack } from "@/content/site-content";
 import { projects, featuredProject } from "@/content/projects";
 import { pipeline } from "@/content/architecture";
 import { TechStack } from "@/components/tech-stack";
+import { OpenSourceActivity } from "@/components/open-source-activity";
+import { openSourceActivity } from "@/content/github";
 
 export const metadata: Metadata = buildMetadata({
   path: "/",
@@ -134,6 +136,11 @@ export default function HomePage() {
       <Reveal as="section" className="mx-auto max-w-[1180px] px-8 py-14">
         <SectionHeading eyebrow="Toolkit" title="The stack I reach for." className="mb-9" />
         <TechStack groups={stack} />
+      </Reveal>
+
+      {/* OPEN SOURCE & ACTIVITY */}
+      <Reveal as="section" className="mx-auto max-w-[1180px] px-8 py-14">
+        <OpenSourceActivity activity={openSourceActivity} />
       </Reveal>
 
       {/* CTA */}

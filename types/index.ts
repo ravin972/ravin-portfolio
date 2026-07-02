@@ -119,3 +119,23 @@ export interface WritingEntry {
   href?: string;
   status?: "published" | "draft";
 }
+
+/** One commit in the "Recent commits" list. */
+export interface CommitEntry {
+  message: string;
+  repo: string;
+  /** Relative label ("2d ago"). Representative until the live GitHub loader (PI-5). */
+  when: string;
+}
+
+/** Powers the home "Open-source & activity" section. */
+export interface OpenSourceActivityData {
+  handle: string;
+  /** Status shown in the header pill, e.g. "representative · goes live on GitHub connect". */
+  status: string;
+  commits: CommitEntry[];
+  /** Heatmap intensity levels, 0–4, length = weeks × days. */
+  contributions: number[];
+  weeks: number;
+  days: number;
+}
