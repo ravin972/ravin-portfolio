@@ -67,7 +67,7 @@ content/                 # ← the single source of truth (typed data)
   architecture.ts        # system map, flow stages, decisions, pipeline
   code-samples.ts        # the real code in the case study
 lib/                     # utils (cn, formatDate), seo (metadata + JSON-LD)
-hooks/                   # use-command-palette, use-mouse-glow, use-prefers-reduced-motion
+hooks/                   # use-command-palette, use-mouse-glow
 types/                   # all domain types
 public/                  # favicon.svg, resume.pdf
 ```
