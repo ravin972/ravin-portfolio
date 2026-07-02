@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatStrip } from "@/components/stat-strip";
-import { Pipeline } from "@/components/pipeline";
 import { ProjectCard } from "@/components/project-card";
 import { ContactCTA } from "@/components/contact-cta";
 import { Button } from "@/components/ui/button";
@@ -11,7 +10,6 @@ import { buildMetadata, personJsonLd } from "@/lib/seo";
 import { site } from "@/content/site";
 import { heroStats, principles, stack } from "@/content/site-content";
 import { projects, featuredProject } from "@/content/projects";
-import { pipeline } from "@/content/architecture";
 import { TechStack } from "@/components/tech-stack";
 import { OpenSourceActivity } from "@/components/open-source-activity";
 import { openSourceActivity } from "@/content/github";
@@ -66,24 +64,6 @@ export default function HomePage() {
           <span>3+ yrs</span><span className="text-ink-4">/</span>
           <span>Leading AVA ONE &amp; AVACRM</span><span className="text-ink-4">/</span>
           <span>Node · Python · TypeScript</span>
-        </div>
-      </section>
-
-      {/* HERO PIPELINE */}
-      <section className="mx-auto max-w-[1180px] px-8 pb-10 pt-5">
-        <div className="rounded-[18px] border border-border bg-gradient-to-b from-[#101014] to-[#0a0a0b] px-[26px] py-6">
-          <div className="mb-[22px] flex flex-wrap items-center justify-between gap-2.5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-5">
-              Live AI voice pipeline · AVA ONE
-            </span>
-            <Link
-              href="/architecture"
-              className="rounded-full border border-violet/30 px-[11px] py-1 font-mono text-[11px] text-violet-soft transition-colors hover:bg-violet/12"
-            >
-              step through it →
-            </Link>
-          </div>
-          <Pipeline nodes={pipeline} />
         </div>
       </section>
 
